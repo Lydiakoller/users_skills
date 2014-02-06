@@ -1,0 +1,10 @@
+
+</br>
+</br>
+<form action='/edit_skills' method='post'>
+name: <input type='text' name ='name' value='<%=current_user.name%>'>
+skill: <input type='text' name ='skill' value='<%=Skill.find(current_user.id).name%>'>
+context: <input type='text' name ='context' value='<%=Skill.find(current_user.id).context%>'>
+years: <input type='text' name ='years' value='<%=Proficiency.find(current_user.id).years%>'>
+<input type='submit' value='submit'>
+</form>

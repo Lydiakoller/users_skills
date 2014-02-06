@@ -1,5 +1,19 @@
 <div class="container">
   <h1>User Skills and Levels</h1>
 
-  <%# TODO: display the skills and proficiency levels for each user ... %>
+  <%@users.each do |user| %>
+  name:<li><%=user.name%></li>
+  skill:<li><%=Skill.find(user.id).name%></li>
+  context:<li><%=Skill.find(user.id).context%></li>
+  years:<li><%=Proficiency.find(user.id).years%></li>
+  <%if Proficiency.find(user.id).formal == 0 %>
+  formal?<li>false</li>
+  <%else%>
+  formal?<li>true</li>
+  <%end%>
+</br>
+</br>
+
+
+  <%end%>
 </div>

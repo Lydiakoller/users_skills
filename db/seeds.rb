@@ -18,4 +18,9 @@ design_skills.each do |skill|
   Skill.create :name => skill, :context => 'creative'
 end
 
-# TODO: create associations between users and skills
+Proficiency.create(:user_id => 1, :skill_id => 1, :years => 2, :formal => 0)
+Proficiency.create(:user_id => 3, :skill_id => 3, :years => 2, :formal => 1)
+Proficiency.create(:user_id => 2, :skill_id => 5, :years => 2, :formal => 0)
+Proficiency.create(:user_id => 4, :skill_id => 3, :years => 2, :formal => 1)
+Proficiency.create(:user_id => 5, :skill_id => 1, :years => 2, :formal => 0)
+Proficiency.create(:user_id => 6, :skill_id => 1, :years => 2, :formal => 0)

@@ -56,3 +56,26 @@ post '/users' do
     erb :sign_up
   end
 end
+
+get '/edit_skills' do
+
+  erb :edit_skills
+end
+
+post '/edit_skills' do
+  user = current_user
+  user.update(name: params[:name])
+  skill = Skill.find(current_user.id)
+  skill.update(name: params[:skill], context: params[:context])
+  # skill_context = Skill.find(current_user.id).context
+  # skill_context.update(context:params[:context])
+  proficiency = Proficiency.find(current_user.id)
+  proficiency.update(years: params[:years])
+  redirect '/'
+end
+
+
+
+
+
+
